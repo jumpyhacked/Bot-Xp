@@ -162,7 +162,7 @@ client.on('message', (message) => {
 
  client.on('message', message => {
 
-    if(!message.content.startsWith('.warn')) return
+    if(message.content.startsWith('.warn')) {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You can\'t use that!')
     if(!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send('I don\'t have the right permissions.')
     
@@ -206,6 +206,7 @@ client.on('message', (message) => {
     .setTimestamp()
 
     message.channel.send(warnembed);
+    }
      
  })
 
@@ -215,7 +216,7 @@ client.on('message', (message) => {
 
     
 
-    if(!message.content.startsWith('.listwarn')) return
+    if(message.content.startsWith('.listwarn')) {
     if(!message.member.hasPermission("MANAGE_MESSAGES"))  {
 
         if(!Warnlist[user.id]) return message.reply('tu n\'as pas de warn')
@@ -251,7 +252,7 @@ client.on('message', (message) => {
 
 
 	
-    
+    }
 });
 
 client.on("message",  message => {
@@ -263,7 +264,7 @@ client.on("message",  message => {
  
  client.on('message', message => {
     // Ignore messages that aren't from a guild
-    if(!message.content.startsWith('.ban')) return
+    if(!message.content.startsWith('.ban')){
     if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('You can\'t use that!')
     if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send('I don\'t have the right permissions.')
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -297,6 +298,7 @@ client.on("message",  message => {
     .setTimestamp()
 
     message.channel.send(banembed);
+    }
   });
 /*client.on('message', message => {
 
