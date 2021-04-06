@@ -489,7 +489,7 @@ function resetBot(channel) {
     channel.send('Restarting...')
     .then(async message => {
 await client.destroy()
-await client.login(token)
+await client.login(process.env.TOKEN)
 await console.log('restard')
 })}
 
@@ -498,4 +498,4 @@ setTimeout(() => {
     return res.edit("listen!")
 }, 1000)*/
 
-client.login(token)
+client.login(process.env.TOKEN)
