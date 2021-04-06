@@ -4,7 +4,6 @@ const client = new Discord.Client();
 const { Menu } = require('discord.js-menu')
 const fs = require('fs');
 const { waitForDebugger } = require('inspector');
-const infot = require('statsbot.json')
 let atsp = JSON.parse(fs.readFileSync("atsp.json", "utf8"))
 let data = JSON.parse(fs.readFileSync("data.json", "utf8"))
 let infoj = JSON.parse(fs.readFileSync("jeux.json", "utf8"))
@@ -393,7 +392,7 @@ client.on('message', message => {
                 .addFields(  
                 {
                         name: 'test1' ,
-                        value: infot.status,
+                        value: 'on',
                         inline: true,
                 },
                 {
