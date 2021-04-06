@@ -4,7 +4,6 @@ const client = new Discord.Client();
 const { Menu } = require('discord.js-menu')
 const fs = require('fs');
 const { waitForDebugger } = require('inspector');
-let atsp = JSON.parse(fs.readFileSync("atsp.json", "utf8"))
 let data = JSON.parse(fs.readFileSync("data.json", "utf8"))
 let infoj = JSON.parse(fs.readFileSync("jeux.json", "utf8"))
 let Warnlist = JSON.parse(fs.readFileSync("warn.json", "utf8"))
@@ -159,38 +158,6 @@ client.on('message', (message) => {
 
 
 
- client.on('message', (message) => {
-
-    let user = message.author
-
-    if(!atsp[user.id]){
-        atsp[user.id] = {
-            "Profil": user.username, 
-            "Nombredemssage": 1,
-            "délai": 0 
-        }
-
-        fs.writeFile("./atsp.json", JSON.stringify(atsp, null, 2), (err) => {
-            if(err) console.log("Une erreur est survenue");
-        }); //Permet de sauvegarder dans le fichier json
-        
-}else{
-        
-    setInterval(function(astp){ 
-        let atsp = JSON.parse(fs.readFileSync("atsp.json", "utf8"))
-        let user = message.author
-        astp[user.id].délai + 0.1
-        fs.writeFile("./atsp.json", JSON.stringify(atsp, null, 2), (err) => {
-            if(err) console.log("Une erreur est survenue");
-        }); //Permet de sauvegarder dans le fichier json
-    }, 100);
-    fs.writeFile("./atsp.json", JSON.stringify(atsp, null, 2), (err) => {
-        if(err) console.log("Une erreur est survenue");
-    }); //Permet de sauvegarder dans le fichier json
-}
-
- 
- })
  //________________________________________________________________________________warn
 
  client.on('message', message => {
