@@ -1,0 +1,18 @@
+{
+  "name": "bot-xp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jumpy Hacked",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "discord.js-menu": "^2.3.1",
+    "fs": "0.0.1-security",
+    "ms": "^2.1.3",
+    "request-promise": "^4.2.6"
+  }
+}
